@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+  </head>
+  <style>
+  </style>
+  <body>
+      <canvas id="canvas" width=600 height=400/>
+      <script>
+        var wcjs = require("wcjs-prebuilt");
+        //var player = new wcjs("#player").addPlayer({ autoplay: true });
+
+        //player.addPlaylist("http://localhost:8134/index.m3u8");
+        var wcjsRender = require("wcjs-renderer");
+        var player = wcjsRender.init(document.getElementById("canvas"),["-vvv"],null,wcjs);
+        player.onLogMessage = function (level, message, format) { console.log(level,message) }
+
+        player.play("https://192-168-254-249.ip.getyounity.com:8133/04241a4c-c64e-49b8-8511-9ac272a661d9/6a59ea26a301957b30e73b3e1c7f865a2aab30ec/index.m3u8?did=709b3fad-7340-4d20-8e9f-9866b59af3e5&at=c909bcba-d5ef-4312-8a29-efd145367282&hlsv2=true&session=TEST_SESSION_ID");
+
+      </script>
+  </body>
+</html>
